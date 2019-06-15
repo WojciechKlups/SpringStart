@@ -1,9 +1,5 @@
 package config;
 
-import beans.MessagePrinter;
-import beans.MessageProducer;
-import beans.SimpleMessageProducer;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 

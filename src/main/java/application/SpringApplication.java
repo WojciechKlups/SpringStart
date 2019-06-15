@@ -1,9 +1,8 @@
 package application;
 
-import beans.MessagePrinter;
+import beans.printers.MessagePrinter;
 import config.ApplicationConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SpringApplication {
 

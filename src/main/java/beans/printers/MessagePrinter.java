@@ -1,5 +1,7 @@
-package beans;
+package beans.printers;
 
+import beans.decorators.MessageDecorator;
+import beans.producers.MessageProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -11,6 +13,9 @@ public class MessagePrinter {
     @Autowired  // wstrzykiwanie przez pole (jeśli jest dużo pól (żeby nie rozbudowywać konstruktora))
     @Qualifier("simpleMessageProducer")
     private MessageProducer messageProducer;
+
+    @Autowired
+    private MessageDecorator messageDecorator;
 
 //    public MessagePrinter(MessageProducer messageProducer) {
 //        this.messageProducer = messageProducer;
@@ -30,6 +35,7 @@ public class MessagePrinter {
 
     public void printMessage() {
         final String message = messageProducer.getMessage();
-        System.out.println(message);
+        final String decorated = messageDecorator.decorate(message);
+        System.out.println(decorated);
     }
 }

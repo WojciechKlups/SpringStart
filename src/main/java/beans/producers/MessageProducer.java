@@ -1,4 +1,4 @@
-package beans;
+package beans.producers;
 
 public interface MessageProducer {
 

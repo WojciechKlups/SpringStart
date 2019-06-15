@@ -5,8 +5,11 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
+import static beans.producers.Producer.*;
+
 @Component
-@Qualifier ("fileMessageProducer")
+// @Qualifier ("fileMessageProducer")
+@Producer(type = ProducerType.FILE)
 public class FileMessageProducer implements MessageProducer {
 
     @Override

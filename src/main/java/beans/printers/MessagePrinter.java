@@ -2,17 +2,20 @@ package beans.printers;
 
 import beans.decorators.MessageDecorator;
 import beans.producers.MessageProducer;
+import beans.producers.Producer;
 import beans.producers.SimpleMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+
+import static beans.producers.Producer.*;
 
 
 @Component
 public class MessagePrinter {
 
     @Autowired  // wstrzykiwanie przez pole (jeśli jest dużo pól (żeby nie rozbudowywać konstruktora))
-    @SimpleMessage
+    @Producer(type = ProducerType.SIMPLE)
     private MessageProducer messageProducer;
 
     @Autowired

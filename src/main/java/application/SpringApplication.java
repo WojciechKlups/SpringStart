@@ -1,6 +1,7 @@
 package application;
 
 import beans.printers.MessagePrinter;
+import beans.producers.NumberMessageProducer;
 import config.ApplicationConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -17,6 +18,12 @@ public class SpringApplication {
 
         MessagePrinter messagePrinter = context.getBean(MessagePrinter.class);
         messagePrinter.printMessage();
+
+        NumberMessageProducer numberMessageProducer = context.getBean(NumberMessageProducer.class);
+        System.out.println(numberMessageProducer.getMessage());
+
+        NumberMessageProducer numberMessageProducer2 = context.getBean(NumberMessageProducer.class);
+        System.out.println(numberMessageProducer2.getMessage());
 
     }
 }

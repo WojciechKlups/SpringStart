@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
 
 import static beans.producers.Producer.*;
 
-
 @Component
 public class MessagePrinter {
+
 
     @Autowired  // wstrzykiwanie przez pole (jeśli jest dużo pól (żeby nie rozbudowywać konstruktora))
     @Producer(type = ProducerType.SIMPLE)
